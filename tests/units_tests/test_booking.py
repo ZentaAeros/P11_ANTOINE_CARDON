@@ -71,3 +71,10 @@ def test_book_closed_competition():
         f"/book/{server.competitions[0]['name']}/{server.clubs[0]['name']}"
     )
     assert "Cette compétition est déjà passée" in response.data.decode()
+
+
+def test_book_open_competition():
+    response = client.get(
+        f"/book/{server.competitions[1]['name']}/{server.clubs[0]['name']}"
+    )
+    assert response.status_code == 200
