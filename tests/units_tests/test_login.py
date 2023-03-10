@@ -9,3 +9,11 @@ def test_login_with_bad_mail():
 
     assert response.status_code == 401
     assert "Compte inexistant" in response.data.decode()
+
+
+def test_login_with_empty_mail():
+    email = ""
+    response = client.post("/showSummary", data={"email": email})
+
+    assert response.status_code == 401
+    assert "Veuillez entrer une adresse mail" in response.data.decode()
