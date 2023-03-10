@@ -62,7 +62,6 @@ def purchasePlaces():
     placesRequired = int(request.form["places"])
     competition["numberOfPlaces"] = int(competition["numberOfPlaces"]) - placesRequired
     flash("Great-booking complete!")
-
     try:
         placesRequired = int(request.form["places"])
         if int(club["points"]) < placesRequired:
