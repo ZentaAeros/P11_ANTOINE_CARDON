@@ -78,6 +78,7 @@ def book(competition, club):
             flash("Something went wrong-please try again")
             return render_template("welcome.html", club=club, competitions=competitions)
     except IndexError:
+        flash("Compétition inexistante.")
         return render_template(
             "welcome.html",
             club=club,
