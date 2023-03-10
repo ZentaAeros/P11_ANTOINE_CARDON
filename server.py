@@ -33,7 +33,10 @@ def showSummary():
         return render_template("welcome.html", club=club, competitions=competitions)
 
     except IndexError:
-        flash("Compte inexistant")
+        if request.form["email"] == "":
+            flash("Veuillez entrer une adresse mail")
+        else:
+            flash("Compte inexistant")
         return render_template("index.html"), 401
 
 
