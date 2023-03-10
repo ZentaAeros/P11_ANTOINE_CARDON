@@ -62,7 +62,20 @@ def purchasePlaces():
     placesRequired = int(request.form["places"])
     competition["numberOfPlaces"] = int(competition["numberOfPlaces"]) - placesRequired
     flash("Great-booking complete!")
-    return render_template("welcome.html", club=club, competitions=competitions)
+    try:
+        placesRequired = int(request.form["places"])
+        if int(club["points"]) < placesRequired:
+            flash("Solde de points insuffisant")
+            return render_template("booking.html", club=club, competition=competition)
+        else:
+            competition["numberOfPlaces"] = (
+                int(competition["numberOfPlaces"]) - placesRequired
+            )
+            flash("Great-booking complete!")
+            return render_template("welcome.html", club=club, competitions=competitions)
+
+    except ValueError:
+        flash(f"Veuillez entrer une valeur entre 0 et {competition['numberOfPlaces']}")
 
 
 # TODO: Add route for points display
