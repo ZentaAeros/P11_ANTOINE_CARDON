@@ -48,3 +48,16 @@ def test_booking_with_more_than_allowed():
         "Le nombre de place restant est inférieur à votre demande"
         in response.data.decode()
     )
+
+
+def test_booking_with_more_twelve_points():
+    response = client.post(
+        "/purchasePlaces",
+        data={
+            "places": 13,
+            "club": server.clubs[0]["name"],
+            "competition": server.competitions[0]["name"],
+        },
+    )
+
+    assert "Vous ne pouvez pas réserver + de 12 places" in response.data.decode()
