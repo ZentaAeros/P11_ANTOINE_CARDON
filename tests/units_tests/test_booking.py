@@ -76,7 +76,7 @@ def test_booking_with_negative_value():
     )
 
     assert (
-        f"Valeur incorrect"
+        f"Vous ne pouvez pas entrer une valeur négative"
         in response.data.decode()
     )
 
