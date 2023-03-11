@@ -46,7 +46,12 @@ def index():
 def showSummary():
     try:
         club = [club for club in clubs if club["email"] == request.form["email"]][0]
-        return render_template("welcome.html", club=club, competitions=competitions)
+        return render_template(
+            "welcome.html",
+            club=club,
+            past_competitions=compet["past_compet"],
+            actually_competitions=compet["actually_compet"],
+        )
 
     except IndexError:
         if request.form["email"] == "":
@@ -74,9 +79,6 @@ def book(competition, club):
             return render_template(
                 "booking.html", club=foundClub, competition=foundCompetition
             )
-        else:
-            flash("Something went wrong-please try again")
-            return render_template("welcome.html", club=club, competitions=competitions)
     except IndexError:
         flash("Compétition inexistante.")
         return render_template(
@@ -105,16 +107,24 @@ def purchasePlaces():
         elif int(competition["numberOfPlaces"]) < placesRequired:
             flash("Le nombre de place restant est inférieur à votre demande")
             return render_template("booking.html", club=club, competition=competition)
+        elif placesRequired < 0:
+            flash("Vous ne pouvez pas entrer une valeur négative")
+            return render_template("booking.html", club=club, competition=competition)
         else:
             competition["numberOfPlaces"] = (
                 int(competition["numberOfPlaces"]) - placesRequired
             )
             club["points"] = int(club["points"]) - placesRequired
             flash("Great-booking complete!")
-            return render_template("welcome.html", club=club, competitions=competitions)
+            return render_template(
+            "welcome.html",
+            club=club,
+            past_competitions=compet["past_compet"],
+            actually_competitions=compet["actually_compet"],
+        )
 
     except ValueError:
-        flash(f"Veuillez entrer une valeur entre 0 et {competition['numberOfPlaces']}")
+        flash(f"Valeur incorrect")
 
 
 # TODO: Add route for points display
