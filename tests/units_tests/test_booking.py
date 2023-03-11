@@ -62,6 +62,23 @@ def test_booking_with_more_twelve_points():
 
     assert "Vous ne pouvez pas réserver + de 12 places" in response.data.decode()
 
+def test_booking_with_negative_value():
+    server.clubs[0]["points"] = 10
+    server.competitions[0]["numberOfPlaces"] = 6
+
+    response = client.post(
+        "/purchasePlaces",
+        data={
+            "places": -2,
+            "club": server.clubs[0]["name"],
+            "competition": server.competitions[0]["name"],
+        },
+    )
+
+    assert (
+        f"Valeur incorrect"
+        in response.data.decode()
+    )
 
 """ TEST BOOKING COMPETITION : Past, actually... """
 
