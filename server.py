@@ -121,7 +121,6 @@ def purchasePlaces():
         past_competitions=compet["past_compet"],
         actually_competitions=compet["actually_compet"],
     )
-        flash(f"Valeur incorrect")
 
 
 # TODO: Add route for points display
