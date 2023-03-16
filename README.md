@@ -8,7 +8,7 @@ Bienvenue sur la plateforme numérique pour coordonner les compétitions de forc
 * Activez l'environnement virtuel via `env/Scripts/activate`
 * Installez les paquets nécessaire à l'éxecution du script à l'aide du fichier *requirements.txt* via `python -m pip install -r requirements.txt`
 * Allez à la racine du projet via `cd P11_ANTOINE_CARDON`
-* Executez cette commande `$env:FLASK_APP = "server.py"`
+* Executez cette commande `$env:FLASK_APP=server`
 * Puis lancer le serveur via la commande `flask run`
 * Utilisez votre navigateur internet favori et entrez cette URL : http://127.0.0.1:5000/
 * ENJOY ! Vous êtes prêt à utiliser l'application !
@@ -20,7 +20,7 @@ Bienvenue sur la plateforme numérique pour coordonner les compétitions de forc
 * Activez l'environnement virtuel via `source env/bin/activate`
 * Installez les paquets nécessaire à l'éxecution du script à l'aide du fichier *requirements.txt* via `python -m pip install -r requirements.txt`
 * Allez à la racine du projet via `cd P11_ANTOINE_CARDON`
-* Executez cette commande `export FLASK_APP = "server.py"`
+* Executez cette commande `export FLASK_APP=server.`
 * Puis lancer le serveur via la commande `flask run`
 * Utilisez votre navigateur internet favori et entrez cette URL : http://127.0.0.1:5000/
 * ENJOY ! Vous êtes prêt à utiliser l'application !
