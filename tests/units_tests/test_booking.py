@@ -100,3 +100,15 @@ def test_book_open_competition():
 def test_book_competition_does_not_exist():
     response = client.get(f"/book/CompetitionDoesNotExist/{server.clubs[0]['name']}")
     assert "Compétition inexistante." in response.data.decode()
+
+def test_book_with_empty_value():
+    response = response = client.post(
+        "/purchasePlaces",
+        data={
+            "places":"",
+            "club": server.clubs[0]["name"],
+            "competition": server.competitions[0]["name"],
+        },
+    )
+
+    assert "Entrez une valeur" in response.data.decode()
