@@ -6,8 +6,8 @@ Bienvenue sur la plateforme numérique pour coordonner les compétitions de forc
 * Vous pouvez désormais clôner ce dépot dans le dossier fraîchement créé via `git clone https://github.com/ZentaAeros/P11_ANTOINE_CARDON.git`
 * Vous pouvez à présent créer un environnement virtuel via : `python -m venv env`
 * Activez l'environnement virtuel via `env/Scripts/activate`
-* Installez les paquets nécessaire à l'éxecution du script à l'aide du fichier *requirements.txt* via `python -m pip install -r requirements.txt`
 * Allez à la racine du projet via `cd P11_ANTOINE_CARDON`
+* Installez les paquets nécessaire à l'éxecution du script à l'aide du fichier *requirements.txt* via `python -m pip install -r requirements.txt`
 * Executez cette commande `$env:FLASK_APP="server.py"`
 * Puis lancer le serveur via la commande `flask run`
 * Utilisez votre navigateur internet favori et entrez cette URL : http://127.0.0.1:5000/
@@ -18,8 +18,8 @@ Bienvenue sur la plateforme numérique pour coordonner les compétitions de forc
 * Vous pouvez désormais clôner ce dépot dans le dossier fraîchement créé via `git clone https://github.com/ZentaAeros/P11_ANTOINE_CARDON.git`
 * Vous pouvez à présent créer un environnement virtuel via : `python -m venv env`
 * Activez l'environnement virtuel via `source env/bin/activate`
-* Installez les paquets nécessaire à l'éxecution du script à l'aide du fichier *requirements.txt* via `python -m pip install -r requirements.txt`
 * Allez à la racine du projet via `cd P11_ANTOINE_CARDON`
+* Installez les paquets nécessaire à l'éxecution du script à l'aide du fichier *requirements.txt* via `python -m pip install -r requirements.txt`
 * Executez cette commande `export FLASK_APP=server`
 * Puis lancer le serveur via la commande `flask run`
 * Utilisez votre navigateur internet favori et entrez cette URL : http://127.0.0.1:5000/
