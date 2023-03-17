@@ -28,22 +28,15 @@ Bienvenue sur la plateforme numérique pour coordonner les compétitions de forc
 ## Lancer les tests unitaires / intégration
 * Pour lancer les tests vous devez executer la commande `pytest`
 
-* Exemple de rapport : 
-> ========================================================================================================== test session starts ============================================================================================================
-> platform win32 -- Python 3.10.10, pytest-7.2.2, pluggy-1.0.0
-> rootdir: C:\Users\abcardon\Documents\openclassroom\projects\projet11\16032023\P11_ANTOINE_CARDON
-> plugins: cov-4.0.0, flask-1.2.0
-> collected 15 items
-> 
-> tests\integration_tests\test_deduct_points_clubs.py .                                                                                                                                                                                 [  6%]
-> tests\units_tests\test_booking.py .......                                                                                                                                                                                             [ 53%]
-> tests\units_tests\test_display_points_clubs.py .                                                                                                                                                                                      [ 60%] 
-> tests\units_tests\test_login.py ....                                                                                                                                                                                                  [ 86%]
-> tests\units_tests\test_logout.py .                                                                                                                                                                                                    [ 93%]
-> tests\units_tests\test_remove_points_clubs.py .                                                                                                                                                                                       [100%] 
-> 
-> ============================================================================================================ 15 passed in 0.13s ============================================================================================================
-
 ## Lancer un test de couverture
-Pour lancer un test de couverture veuillez executer cette commande : `pytest --cov=. --cov-report html`
+* Veuillez executer cette commande : `pytest --cov=. --cov-report html`
+
 Un nouveau dossier nommé "htmlcov" sera créé à la racine du projet, il suffira d'ouvrir le fichier "index.html" de ce dossier dans votre navigateur internet favori.
+
+## Lancer un test de performance
+*Il faut au préalable lancer le serveur flask, pour cela veuillez suivre les instructions ci-dessus selon votre OS*
+* Executer cette commande : `locust -f tests/performance_tests`
+* Se rendre sur son navigateur internet favori et entrer l'URL suivante : http://0.0.0.0:8089/ 
+* Dans le champs *Number of users* veuillez saisir : 6
+* Dans le champs *Host* veuillez saisir : http://127.0.0.1:5000
+* Cliquez sur *Start swarming* et vous verrez ainsi le résultat
